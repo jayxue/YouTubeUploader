@@ -32,10 +32,11 @@ In order to utilize this library, you just need to do some configurations withou
 * In your app's ```AndroidManifest.xml```, include the activity:
   * ```com.wms.youtubeuploader.sdk.activity.UploadVideoActivity```
 * In your app's ```AndroidManifest.xml```, include meta-data for Google GMS:
+```
 		<meta-data
 			android:name="com.google.android.gms.version"
 			android:value="@integer/google_play_services_version" />
-
+```
 * In your app's ```res/values/strings.xml```,
   * Set ```app_name``` (name of your application).
 * Replace your app's ic_launcher icons.
