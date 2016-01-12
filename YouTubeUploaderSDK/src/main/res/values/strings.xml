@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">YouTubeUploaderSDK</string>
+
+    <string name="localFilePath">Local file path:</string>
+    <string name="noFileYet">No file yet</string>
+    <string name="noVideoYet">No video yet</string>
+    <string name="videoURL">Video URL:</string>
+    <string name="noUrlYet">No url yet</string>
+    <string name="takeOrSelectVideo">Please take or select a video first</string>
+    <string name="videoNotAvailable">There is no video available</string>
+    <string name="cannotPickUpVideo">Cannot Pick Up Video</string>
+    <string name="notSupportedOnDevice">Video pick up is not supported on the device</string>
+    <string name="enterVideoTitle">Please enter a title for the video</string>
+    <string name="pressVideoToPreview">Press the video to preview</string>
+    <string name="confirmUploadVideo">Are you sure you want to upload the video?</string>
+    <string name="uploadingVideo">Uploading video&#8230;</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="ok">OK</string>
+    <string name="videoUploadCompleted">The video has been successfully uploaded</string>
+    <string name="videoUploadCancelled">Video uploading has been canceled</string>
+    <string name="videoUploadFailed">Uploading of video failed due to some problems</string>
+    <string name="videoTitle">Write video title here</string>
+    <string name="videoDescription">Write video description here</string>
+    <string name="googleAccountNotSelected">Google Account Not Selected</string>
+    <string name="googleAccountNotSupported">Probably your device does not support Google account.</string>
+    <string name="appAuthorized">The app has been authorized. You can now upload your video now.</string>
+
+</resources>
