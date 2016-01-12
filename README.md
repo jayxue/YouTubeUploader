@@ -2,10 +2,10 @@
 
 An Android library that helps easily create apps with the functionality of uploading videos to YouTube.
 
-![Demo Screenshot 1](https://github.com/jayxue/YouTubeUploader/tree/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_1.png)
-![Demo Screenshot 2](https://github.com/jayxue/YouTubeUploader/tree/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_2.png)
-![Demo Screenshot 3](https://github.com/jayxue/YouTubeUploader/tree/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_3.png)
-![Demo Screenshot 4](https://github.com/jayxue/YouTubeUploader/tree/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_4.png)
+![Demo Screenshot 1](https://github.com/jayxue/YouTubeUploader/blob/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_1.png)
+![Demo Screenshot 2](https://github.com/jayxue/YouTubeUploader/blob/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_2.png)
+![Demo Screenshot 3](https://github.com/jayxue/YouTubeUploader/blob/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_3.png)
+![Demo Screenshot 4](https://github.com/jayxue/YouTubeUploader/blob/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_4.png)
 
 Details
 -------
