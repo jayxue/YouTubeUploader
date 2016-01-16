@@ -99,29 +99,32 @@ public class UploadVideoActivity extends Activity {
 		if (requestCode == IntentRequestCode.TAKE_VIDEO && resultCode == RESULT_OK) {
 			// videoFileName has been prepared for taking video
 			File file = new File(videoFileName);
-			// In Android 2.2, the file may not be created, therefore we need to check the returned URI.
+			// On Android 2.2, the file may not be created, therefore we need to check the returned URI.
 			if (!file.exists()) {
 				if (data.getData() != null) {
 					videoFileName = getRealPathFromURI(data.getData());
-					onVideoReady();
+					if(videoFileName != null) {
+						onVideoReady();
+					}
 				}
 				else {
+					videoFileName = null;
 					Toast.makeText(this, getString(R.string.videoNotAvailable), Toast.LENGTH_LONG).show();
-					return;
 				}
+			}
+			else {
+				onVideoReady();
 			}
 		}
 		else if (requestCode == IntentRequestCode.PICK_UP_VIDEO && resultCode == RESULT_OK) {
 			Uri selectedVideo = data.getData();
-			String[] filePathColumn = { MediaStore.Video.Media.DATA };
-			Cursor cursor = getContentResolver().query(selectedVideo, filePathColumn, null, null, null);
-			cursor.moveToFirst();
-			int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-			String filePath = cursor.getString(columnIndex);
-			cursor.close();
-			File file = new File(filePath);
-			videoFileName = file.getAbsolutePath();
-			onVideoReady();
+			videoFileName = getRealPathFromURI(selectedVideo);
+			if(videoFileName != null) {
+				onVideoReady();
+			}
+			else {
+				Toast.makeText(this, getString(R.string.videoNotAvailable), Toast.LENGTH_LONG).show();
+			}
 		}
 		else if (requestCode ==  IntentRequestCode.REQUEST_ACCOUNT_PICKER &&resultCode == Activity.RESULT_OK) {
 			if(data != null	&& data.getExtras() != null) {
@@ -141,6 +144,18 @@ public class UploadVideoActivity extends Activity {
 		}
 
 		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	private String getRealPathFromURI(Uri contentUri) {
+		String filePath = null;
+		String[] projection = { MediaStore.Video.Media.DATA };
+		Cursor cursor = getContentResolver().query(contentUri, projection, null, null, null);
+		if(cursor.moveToFirst()) {
+			int columnIndex = cursor.getColumnIndexOrThrow(projection[0]);
+			filePath = cursor.getString(columnIndex);
+		}
+		cursor.close();
+		return filePath;
 	}
 
 	private class ImageButtonUploadVideoOnClickListener implements ImageButton.OnClickListener {
@@ -231,15 +246,6 @@ public class UploadVideoActivity extends Activity {
 				DialogUtil.showExceptionAlertDialog(UploadVideoActivity.this, getString(R.string.cannotPickUpVideo), getString(R.string.notSupportedOnDevice));
 			}
 		}
-	}
-
-	@SuppressWarnings("deprecation")
-	private String getRealPathFromURI(Uri contentUri) {
-		String[] projection = { MediaStore.Video.Media.DATA };
-		Cursor cursor = managedQuery(contentUri, projection, null, null, null);
-		int column_index = cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DATA);
-		cursor.moveToFirst();
-		return cursor.getString(column_index);
 	}
 
 	private void onVideoReady() {
