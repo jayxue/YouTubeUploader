@@ -103,13 +103,13 @@ public class UploadVideoActivity extends Activity {
 			if (!file.exists()) {
 				if (data.getData() != null) {
 					videoFileName = getRealPathFromURI(data.getData());
+					onVideoReady();
 				}
 				else {
 					Toast.makeText(this, getString(R.string.videoNotAvailable), Toast.LENGTH_LONG).show();
 					return;
 				}
 			}
-			onVideoReady();
 		}
 		else if (requestCode == IntentRequestCode.PICK_UP_VIDEO && resultCode == RESULT_OK) {
 			Uri selectedVideo = data.getData();
