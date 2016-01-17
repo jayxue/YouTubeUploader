@@ -1,6 +1,6 @@
 # YouTubeUploader - Android library for eazily uploading videos to YouTube
 
-An Android library that helps easily create apps with the functionality of uploading videos to YouTube.
+An Android library that helps developers easily create apps with the functionality of uploading videos to YouTube.
 
 ![Demo Screenshot 1](https://github.com/jayxue/YouTubeUploader/blob/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_1.png)
 ![Demo Screenshot 2](https://github.com/jayxue/YouTubeUploader/blob/master/YouTubeUploaderSDK/src/main/res/raw/screenshot_2.png)
@@ -23,7 +23,7 @@ Usage
 -----
 
 In order to utilize this library, you just need to do some configurations without writing any code.
-* Import the YouTubeUploadSDK module into your Android Studio project. Add dependency to the module to your app project.
+* Import the YouTubeUploaderSDK module into your Android Studio project. Add dependency to the module to your app project.
 * In your app's ```AndroidManifest.xml```, make sure that you have the following permissions:
   * ```android.permission.INTERNET```
   * ```android.permission.WRITE_EXTERNAL_STORAGE```
@@ -45,7 +45,7 @@ In order to utilize this library, you just need to do some configurations withou
   You'll need to wait for 15 minutes or longer until the ID takes effect. See http://stackoverflow.com/questions/18022444/youtube-api-3-upload-video-access-not-configured-android.
   For loading videos, we just need a key for Android applications that allows any application (note that loading videos is not a functionality of this library).
  
-Of course you can modify any components of the library or add new components to customize your app's functionality.
+Of course you can modify any components of the library or add new components to customize your Android app's functionality.
 
 Acknowledgement
 ---------------
