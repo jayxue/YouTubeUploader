@@ -231,7 +231,7 @@ public class UploadVideoActivity extends Activity {
 			startActivityForResult(mediaChooser, IntentRequestCode.PICK_UP_VIDEO);
 		}
 		catch (SecurityException e) {
-			// When picking up videos, there may be an exception:
+			// When picking up videos, there may be an exception like:
 			//  java.lang.SecurityException:
 			//      Permission Denial:
 			//      starting Intent { act=android.intent.action.PICK
